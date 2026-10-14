@@ -1,4 +1,7 @@
 # Corex-Aria
+```bash
+  npm start
+```
 Corex-Aria desktop app
 <img width="1719" height="980" alt="image" src="https://github.com/user-attachments/assets/ba4b19d1-0880-4822-af50-8b363f27b0aa" />
 <img width="1717" height="983" alt="image" src="https://github.com/user-attachments/assets/8d57e2ba-e171-4e94-823a-f7118d3b8b5b" />
