@@ -1,14 +1,15 @@
 # Corex-Aria
+
 How to use Corex-Aria Desktop
--
-First, you will need to install Node.js and Electron.
--
+
+## Prerequisites
+Before you start, you need to install Node.js.
+
+Link -> https://nodejs.org/
+
+## Installation
+
+1. Clone the repo and install dependencies:
+
 ```bash
-link -> https://nodejs.org/
-```
-```bash
-nmp install electron 
-```
-```bash
-  npm start
-```
+npm install electron
