@@ -1,6 +1,6 @@
 # Corex-Aria Project License
 
-## Corex Public Site License (CPSL) v1.1 – Corex-Aria Annex
+## Corex Public Site License (CPSL) v1.2 – Corex-Aria Annex (Source Code Release – Beta)
 
 **Copyright © 2026 Corex Institut. All rights reserved.**
 
@@ -10,7 +10,7 @@ By using **Corex-Aria**, you accept the following conditions.
 
 ## 1. Purpose of the License
 
-This license applies **exclusively** to the desktop application **Corex-Aria** (artificial intelligence), distributed as an executable file **`.exe`**. It does **not** apply to any other projects, tools, or content from Corex Institut (such as YT_install.exe, OutSond, Ultra Booster, or any other project).
+This license applies **exclusively** to the desktop application **Corex-Aria** (artificial intelligence), distributed both as an executable file **`.exe`** and as **source code**, currently in **beta version**. It does **not** apply to any other projects, tools, or content from Corex Institut (such as YT_install.exe, OutSond, Ultra Booster, or any other project).
 
 ---
 
@@ -18,38 +18,57 @@ This license applies **exclusively** to the desktop application **Corex-Aria** (
 
 Corex-Aria is a desktop artificial intelligence application designed to provide a simple, fast, and intuitive experience directly on your computer.
 
-It is currently distributed **only** as an executable file **`.exe`**, allowing for immediate installation and launch, with no complex configuration required.
+**Corex-Aria is currently in beta.** This means that:
+
+- the application may contain bugs, errors, or incomplete features;
+- features may be added, modified, or removed at any time without notice;
+- stability and performance are not guaranteed;
+- the beta version is provided for testing and evaluation purposes.
+
+It is now distributed in two forms:
+
+- as an executable file **`.exe`**, allowing for immediate installation and launch, with no complex configuration required;
+- as **source code**, allowing users to study, modify, and build the application themselves.
 
 The goal of Corex-Aria is to make artificial intelligence accessible to everyone, by offering a clean interface and features designed to be efficient in everyday use.
 
-To use Corex-Aria, simply run the `.exe` file on your machine. Once launched, the application is immediately operational.
+To use Corex-Aria, you may either run the provided `.exe` file or build it from the source code. Once launched, the application is immediately operational.
 
 You are authorized to use this application freely, in compliance with applicable laws and the present conditions.
 
 ---
 
-## 3. Absence of Source Code
+## 3. Source Code Availability and Rights
 
-**Corex-Aria is currently distributed only as an executable `.exe`.** The source code is **not** published, **not** distributed, and **not** accessible at this time.
+**Corex-Aria is now distributed both as an executable `.exe` and as source code, in beta version.** The source code is publicly available and accessible.
 
-Consequently:
+Consequently, you are granted the following rights:
 
-- no authorization to use, study, modify, or redistribute the source code is granted;
-- any attempt to decompile, disassemble, reverse engineer, or extract the source code is **strictly prohibited**;
-- the `.exe` file may not be modified, altered, or redistributed in any form other than that provided by Corex Institut.
+- **Use**: you may run the source code for any purpose, including personal and internal business use.
+- **Study**: you may read, analyze, and understand how the application works.
+- **Modify**: you may alter the source code to suit your needs.
+- **Distribute**: you may redistribute copies of the original or modified source code, provided you comply with the attribution requirements in Section 4.
 
-If the source code is published at a later date, a separate annex to this license will then be published on the official website to define its terms of use.
+However, the following restrictions apply:
+
+- any redistribution of the source code must include this license in full;
+- any modified version must be clearly marked as modified and must not claim to be the original Corex-Aria;
+- the `.exe` file may not be modified, altered, or redistributed in any form other than that provided by Corex Institut, unless it is rebuilt from the official source code and clearly identified as a derivative work.
+
+If the source code is updated at a later date, the terms of this license will continue to apply unless a separate annex is published on the official website.
 
 ---
 
 ## 4. Mandatory Attribution
 
-Anyone using **Corex-Aria** must:
+Anyone using, modifying, or redistributing **Corex-Aria** (in source or executable form) must:
 
-- retain the copyright notices present in the application where they exist;
+- retain the copyright notices present in the application and source code where they exist;
 - indicate the name of the original company: **Corex Institut**;
 - indicate the name of the original author;
-- provide a visible link to the project's official website: **https://corexinstitut.netlify.app**.
+- provide a visible link to the project's official website: **https://corexinstitut.netlify.app**;
+- include a copy of this license with any redistribution;
+- indicate that the project is in **beta version**.
 
 This information must be visible in the documentation, the project repository, or any other location reasonably accessible to users.
 
@@ -67,19 +86,26 @@ It is strictly prohibited to:
 
 ## 6. Modifications
 
-**As Corex-Aria is distributed as an executable `.exe`**, no modification of the software is authorized. Any modified, altered, or rebuilt version does not come from Corex Institut and is not covered by this license.
+**As Corex-Aria is now distributed with its source code**, you are authorized to modify the source code for personal or internal use, and to redistribute modified versions under the conditions set out in Section 3.
+
+However:
+
+- any modified version must be clearly identified as a derivative work and must not be presented as the official Corex-Aria;
+- the original `.exe` file distributed by Corex Institut may not be modified or altered directly;
+- any rebuilt executable must be clearly identified as a derivative work and must comply with the attribution requirements in Section 4;
+- any modified version must clearly indicate that it is based on a **beta version** of Corex-Aria.
 
 ---
 
 ## 7. Use of Content
 
-Unless otherwise stated, the texts, images, logos, and other content present on the site remain protected by copyright and are not covered by the authorization granted for the application.
+Unless otherwise stated, the texts, images, logos, and other content present on the site remain protected by copyright and are not covered by the authorization granted for the application or its source code.
 
 ---
 
 ## 8. No Warranty
 
-The **Corex-Aria** project is provided "as is", without any warranty, express or implied. The author cannot be held liable for any direct or indirect damages related to its use.
+The **Corex-Aria** project is provided "as is", without any warranty, express or implied. **As a beta version, it may contain bugs, errors, or incomplete features.** The author cannot be held liable for any direct or indirect damages related to its use.
 
 ---
 
@@ -91,15 +117,21 @@ This license may be modified at any time. The version published on the official 
 
 ## Summary
 
+- ⚠️ **Corex-Aria is currently in beta version.**
 - ✅ Use of the Corex-Aria application (.exe) authorized.
-- ❌ Access to source code not authorized (not published at this time).
-- ❌ Decompilation / disassembly / reverse engineering prohibited.
-- ❌ Modification of the `.exe` file prohibited.
-- ❌ Redistribution of the `.exe` file in any other form prohibited.
+- ✅ Access to source code authorized (now published).
+- ✅ Study, modification, and redistribution of the source code authorized under conditions.
 - ✅ Use in personal projects authorized.
-- ❌ Use in commercial projects prohibited without authorization.
+- ⚠️ Use in commercial projects authorized only with prior authorization from Corex Institut.
 - ✅ Obligation to mention **Corex Institut**.
 - ✅ Obligation to indicate the name of the original author.
 - ✅ Obligation to add a link to **https://corexinstitut.netlify.app**.
+- ✅ Obligation to include this license in any redistribution.
+- ✅ Obligation to indicate that the project is in **beta version**.
 - ❌ Prohibition of impersonating the original author.
 - ❌ Prohibition of removing attribution information intended to mislead users.
+- ❌ Prohibition of presenting modified versions as the official Corex-Aria.
+
+---
+
+**Note importante** : Si tu souhaites autoriser explicitement l'usage commercial sans autorisation préalable, il faudra modifier la section 3 et le résumé en conséquence. Si tu préfères une licence standard reconnue (MIT, Apache 2.0, GPLv3), je peux également t'aider à adapter le texte.
