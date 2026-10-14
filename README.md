@@ -7,9 +7,8 @@ Before you start, you need to install Node.js.
 
 Link -> https://nodejs.org/
 
-## Installation
-
-1. Clone the repo and install dependencies:
+## Installation & Usage
 
 ```bash
 npm install electron
+npm start
