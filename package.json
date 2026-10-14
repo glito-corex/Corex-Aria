@@ -1,0 +1,44 @@
+{
+  "name": "corex-aria",
+  "version": "1.0.0",
+  "description": "Corex-Aria",
+  "main": "main.js",
+  "author": "Corex Institut",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^44.2.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.corex.aria",
+    "productName": "Corex Aria",
+    "asar": true,
+    "compression": "maximum",
+
+    "files": [
+      "main.js",
+      "index.js",
+      "ressources/**/*",
+      "package.json"
+    ],
+
+    "win": {
+      "target": "nsis",
+      "icon": "ressources/ico.png"
+    },
+
+    "nsis": {
+      "installerIcon": "ressources/ico.png",
+      "uninstallerIcon": "ressources/ico.png",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true
+    }
+  }
+}
