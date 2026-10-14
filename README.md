@@ -11,8 +11,10 @@ Before you start, you need to install Node.js.
 
 Link -> https://nodejs.org/
 
-## Installation & Usage
+## Installation, Usage & Build
 
 ```bash
 npm install electron
 npm start
+npm install --save-dev electron-builder
+npm run build
