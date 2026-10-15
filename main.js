@@ -57,7 +57,7 @@ function crWindow() {
     //set title BrowserWindow 
     fenetre.on('page-title-updated', (event) => {
         event.preventDefault();
-        fenetre.setTitle('Corex-Aria-img');
+        fenetre.setTitle('Corex-Aria');
     });
 
     //load website ai (Corex-Aria)
