@@ -30,7 +30,7 @@ function crWindow() {
     //set fenetre to BrowserWindow
     fenetre = new BrowserWindow({
         //set icon app
-        icon: path.join(__dirname, 'ressources/corex_aria.ico'),
+        icon: path.join(__dirname, 'ressources/ico.png'),
         //set size page
         width: 1000,
         height: 700,
