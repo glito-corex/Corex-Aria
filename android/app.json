@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Corex Aria",
+    "slug": "corex-aria-final",
+    "version": "1.0.0",
+    "description": "Corex Aria - Assistant IA Crée par Corex Institut",
+    "orientation": "portrait",
+    "icon": "./assets/corex_aria.png",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "android": {
+      "package": "com.corex.aria",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/corex_aria.png",
+        "backgroundColor": "#000000"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.corex.aria",
+      "infoPlist": {
+        "NSHumanReadableCopyright": "© 2026 Corex Institut. Tous droits réservés.",
+        "NSMicrophoneUsageDescription": "Corex Aria a besoin du micro pour la saisie vocale"
+      }
+    },
+    "extra": {
+      "copyright": "© 2026 Corex Institut Tous droits réservés",
+      "eas": {
+        "projectId": "f017e7da-94e9-459f-913b-35d4d20ce5a4"
+      }
+    }
+  }
+}
