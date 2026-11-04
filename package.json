@@ -23,6 +23,7 @@
     "files": [
       "main.js",
       "index.js",
+      "preload.s",
       "ressources/**/*",
       "package.json"
     ],
@@ -30,30 +31,17 @@
       "target": "nsis",
       "icon": "ressources/corex_aria.ico"
     },
-
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ],
       "category": "Utility",
       "maintainer": "Corex-Institut",
       "icon": "ressources/corex_aria.png"
     },
-
       "nsis": {
         "installerIcon": "ressources/corex_aria.ico",
         "uninstallerIcon": "ressources/corex_aria.ico",
         "oneClick": false,
         "allowToChangeInstallationDirectory": true,
         "deleteAppDataOnUninstall": true
-      },
-    "appImage": {
-      "artifactName": "${productName}-${version}.${ext}"
-    },
-    "deb": {
-      "depends": [
-      ]
+      }
     }
   }
 }
