@@ -1,7 +1,6 @@
 disable-notifications
 disable-print-preview
-disable-features=Autofill
-disable-features=PasswordManager
+disable-features=AutofillServerCommunication,PasswordManager,Translate,PrivacySandboxSettings4
 disable-translate
 disable-webrtc
 disable-audio-input
@@ -20,3 +19,7 @@ disable-automation
 disable-blink-features=AutomationControlled
 disable-save-password-bubble
 disable-password-manager-reauthentication
+disable-glsl-translator
+disable-gl-extensions
+disable-3d-apis
+disable-angle-features

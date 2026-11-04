@@ -1,6 +1,6 @@
 {
   "name": "corex-aria",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Corex-Aria",
   "main": "main.js",
   "author": "Corex Institut",
@@ -20,25 +20,40 @@
     "productName": "Corex Aria",
     "asar": true,
     "compression": "maximum",
-
     "files": [
       "main.js",
       "index.js",
       "ressources/**/*",
       "package.json"
     ],
-
     "win": {
       "target": "nsis",
-      "icon": "ressources/ico.png"
+      "icon": "ressources/corex_aria.ico"
     },
 
-    "nsis": {
-      "installerIcon": "ressources/ico.png",
-      "uninstallerIcon": "ressources/ico.png",
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "deleteAppDataOnUninstall": true
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "maintainer": "Corex-Institut",
+      "icon": "ressources/corex_aria.png"
+    },
+
+      "nsis": {
+        "installerIcon": "ressources/corex_aria.ico",
+        "uninstallerIcon": "ressources/corex_aria.ico",
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "deleteAppDataOnUninstall": true
+      },
+    "appImage": {
+      "artifactName": "${productName}-${version}.${ext}"
+    },
+    "deb": {
+      "depends": [
+      ]
     }
   }
 }

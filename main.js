@@ -1,19 +1,23 @@
 //main.js root js for electron launche
 //
-//-------------------------------------------------------------
-//Code By Corex Institut (Benjamin Burban) --
-//WebSite - link -> \ https://corexinstitut.netlify.app
-//-------------------------------------------------------------
-//Go home AI Corex Institut 
-//WebSite - link -> \ https://corexinstitut.netlify.app/corexai
-//-------------------------------------------------------------
+        //-------------------------------------------------------------
+        //Code By Corex Institut (Benjamin Burban) --
+        //WebSite - link -> \ https://corexinstitut.netlify.app
+        //-------------------------------------------------------------
+        //Go home AI Corex Institut 
+        //WebSite - link -> \ https://corexinstitut.netlify.app/corexai
+        //-------------------------------------------------------------
 //
 //import lib for use in app Window
 const { BrowserWindow, Menu, app, shell } = require("electron");
 const path = require("path");
 const fs = require("fs");
-//join file (ressources/disabled)
+
+//join file (sources/disabled) and (micro.js)
 const file = path.join(__dirname, "sources/disabled");
+const p = path.join(__dirname, "preload.js")
+let micro = "";
+try { micro = fs.readFileSync(path.join(__dirname, "micro.js"), "utf8"); } catch { }
 
 //Check if the file exists.
 if (fs.existsSync(file)) {
@@ -22,74 +26,102 @@ if (fs.existsSync(file)) {
     disables.forEach(flag => app.commandLine.appendSwitch(flags));
 }
 
-//hidde Menu Bar
-Menu.setApplicationMenu(null);
+//set point fenetre for glabal
+let fenetre;
 
-//function create root page Window
-function crWindow() {
-    //set fenetre to BrowserWindow
-    fenetre = new BrowserWindow({
-        //set icon app
-        icon: path.join(__dirname, 'ressources/ico.png'),
-        //set size page
-        width: 1000,
-        height: 700,
-        minWidth: 700,
-        minHeight: 550,
+//set lck point 
+const lck = app.requestSingleInstanceLock();
 
-        //set preferences app
-        webPreferences: {
-            sandbox: true,
-            contextIsolation: true,
-            webSecurity: true,
-            backgroundThrottling: true,
-
-            nodeIntegration: false,
-            enableRemoteModule: false,
-            webviewTag: false,
-            nodeIntegrationInSubFrames: false,
-            allowRunningInsecureContent: false,
-            experimentalFeatures: false,
-            offscreen: false
+//use entry point lck
+//verif if lck = true or false
+if (!lck) {
+    //kill process no wait
+    process.exit(0);
+} else {
+    app.on('second-instance', () => {
+        if (fenetre) {
+            if (fenetre.isMinimized()) fenetre.restore();
+            //show root page 
+            fenetre.show();
+            //focus app in first view
+            fenetre.focus();
         }
     });
 
-    //set title BrowserWindow 
-    fenetre.on('page-title-updated', (event) => {
-        event.preventDefault();
-        fenetre.setTitle('Corex-Aria');
-    });
+    //hidde Menu Bar
+    Menu.setApplicationMenu(null);
 
-    //load website ai (Corex-Aria)
-    fenetre.loadURL("https://perchance.org/corex-aria");
+    //function create root page Window
+    function crWindow() {
+        //set fenetre to BrowserWindow
+        fenetre = new BrowserWindow({
+            //set icon app
+            icon: path.join(__dirname, 'ressources/corex_aria.ico'),
 
-    fenetre.webContents.setWindowOpenHandler(({ url }) => {
-        shell.openExternal(url);
-        return { action: 'deny' };
-    });
+            //set size page and title
+            title: 'Corex-Aria',
+            width: 1000,
+            height: 700,
+            minWidth: 700,
+            minHeight: 550,
 
-    //wait for finish load root page
-    fenetre.webContents.on("did-finish-load", () => {
-        //set entry point to index.js
-        const deletecontent = fs.readFileSync(path.join(__dirname, "index.js"), "utf8");
+            //set preferences app
+            webPreferences: {
+                preload: fs.existsSync(p) ? p : undefined,
+                contextIsolation: true,
+                webSecurity: true,
+                backgroundThrottling: true,
 
-        //use entry point (deletecontent) and load index.js in root page
-        fenetre.webContents.executeJavaScript(deletecontent);
-    });
+                sandbox: false,
+                nodeIntegration: false,
+                enableRemoteModule: false,
+                webviewTag: false,
+                nodeIntegrationInSubFrames: false,
+                allowRunningInsecureContent: false,
+                experimentalFeatures: false,
+                offscreen: false
+            }
+        });
 
-    //System for page refreshing via F5 and Ctrl+R
-    fenetre.webContents.on('before-input-event', (event, input) => {
-        const ctrl = input.control || input.meta;
+        //load website ai (Corex-Aria)
+        fenetre.loadURL("https://perchance.org/corex-aria");
 
-        if ((ctrl && input.key.toLowerCase() === 'r') || input.key === 'F5') {
-            event.preventDefault();
-            if (input.shift) fenetre.webContents.reloadIgnoringCache();
-            else fenetre.webContents.reload();
-        }
+        //set version app corex-aria-vd in user-agent
+        fenetre.webContents.setUserAgent(`${fenetre.webContents.getUserAgent()} Corex-Aria/1.1.0`);
+
+        //set title BrowserWindow 
+        fenetre.on('page-title-updated', e => e.preventDefault());
+
+        //System for page refreshing F5 and Ctrl+R
+        fenetre.webContents.on('before-input-event', (event, input) => {
+            const ctrl = input.control || input.meta;
+
+            if ((ctrl && input.key.toLowerCase() === 'r') || input.key === 'F5') {
+                event.preventDefault();
+                if (input.shift) fenetre.webContents.reloadIgnoringCache();
+                else fenetre.webContents.reload();
+            }
+        });
+
+        //system for detect micro
+        fenetre.webContents.session.setPermissionRequestHandler((webContents, permission, callback) => {
+            if (permission === 'media' || permission === 'audioCapture') {
+                callback(false);
+                webContents.executeJavaScript(micro).catch(() => { });
+            } else {
+                callback(true);
+            }
+        });
+
+        //system for open url in your default browser
+        fenetre.webContents.setWindowOpenHandler(({ url }) => {
+            shell.openExternal(url);
+            return { action: 'deny' };
+        });
+    }
+
+    //call (crWindow) for create root page 
+    app.whenReady().then(async () => {
+        crWindow();
     });
 }
-
-//call (crWindow) for create root page 
-app.whenReady().then(async () => {
-    crWindow();
-});
